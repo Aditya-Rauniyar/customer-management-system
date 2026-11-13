@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/* Button interactions */
+button {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Disabled buttons */
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Click effect */
+button:not(:disabled):active {
+    transform: scale(0.97);
+}
+
+
+/* ClientFlow animations */
+
+@keyframes cf-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+@keyframes cf-float-reverse {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(12px);
+    }
+}
+
+@keyframes cf-glow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.65;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes cf-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cf-float {
+    animation: cf-float 5s ease-in-out infinite;
+}
+
+.cf-float-reverse {
+    animation: cf-float-reverse 6s ease-in-out infinite;
+}
+
+.cf-glow {
+    animation: cf-glow 5s ease-in-out infinite;
+}
+
+.cf-fade-up {
+    animation: cf-fade-up 0.7s ease-out both;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .cf-float,
+    .cf-float-reverse,
+    .cf-glow,
+    .cf-fade-up {
+        animation: none;
+    }
+}
