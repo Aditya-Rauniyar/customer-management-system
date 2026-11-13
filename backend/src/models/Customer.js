@@ -17,11 +17,7 @@ const customerSchema = new mongoose.Schema(
             type: String,
             trim: true
         },
-        company: {
-            type: String,
-            trim: true
-        },
-        notes: {
+        address: {
             type: String,
             trim: true
         },
